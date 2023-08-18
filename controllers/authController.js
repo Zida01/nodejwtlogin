@@ -206,10 +206,11 @@ module.exports.post_change_password = async (req, res, next) => {
         passwordResetTokenExpires: undefined
 
     },)
-    if (user){
-         res.cookie('jwt', '', { maxAge: 1 });
+    if (user) {
+        res.cookie('jwt', '', { maxAge: 1 });
+        res.render('login')
     }
-   
+
 
     // if (user) {
     //     res.render('login')
